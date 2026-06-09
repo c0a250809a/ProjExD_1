@@ -17,8 +17,11 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        x = tmr
+        x = tmr % 3200
         screen.blit(bg_img, [-x, 0])
+        bg_img_flipped = pg.transform.flip(bg_img, True, False)
+        screen.blit(bg_img_flipped, [-x+1600, 0])
+        screen.blit(bg_img, [-x+3200, 0])
         screen.blit(bg_img_koukaton, [300, 200])
         pg.display.update()
         tmr += 1        
