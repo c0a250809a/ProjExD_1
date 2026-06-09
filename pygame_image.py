@@ -21,16 +21,20 @@ def main():
             if event.type == pg.QUIT: return
 
         key_list = pg.key.get_pressed()
+        x = 0
+        y = 0
         if key_list[pg.K_UP]:
-            bg_rct_koukaton.move_ip((0, -1))
+            y -= 1
         if key_list[pg.K_DOWN]:
-            bg_rct_koukaton.move_ip((0, 1))
+            y += 1
         if key_list[pg.K_LEFT]:
-            bg_rct_koukaton.move_ip((-1, 0))
+            x -= 1
         if key_list[pg.K_RIGHT]:
-            bg_rct_koukaton.move_ip((1, 0))
+            x += 1
         else:
-            bg_rct_koukaton.move_ip((-1, 0))
+            x -= 1
+
+        bg_rct_koukaton.move_ip(x, y)
 
         x = tmr % 3200
         screen.blit(bg_img, [-x, 0])
