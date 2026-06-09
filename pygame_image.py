@@ -29,6 +29,8 @@ def main():
             bg_rct_koukaton.move_ip((-1, 0))
         if key_list[pg.K_RIGHT]:
             bg_rct_koukaton.move_ip((1, 0))
+        else:
+            bg_rct_koukaton.move_ip((-1, 0))
 
         x = tmr % 3200
         screen.blit(bg_img, [-x, 0])
